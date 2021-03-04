@@ -1,7 +1,7 @@
 <%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%-- /WebContent/currentTime.jsp --%>    
+<%-- /WebContent/chap02/currentTime.jsp --%>    
 <!DOCTYPE html>
 <html>
 <head>

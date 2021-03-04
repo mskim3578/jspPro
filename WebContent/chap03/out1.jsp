@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%-- /WebContent/out1.jsp --%>    
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
 <meta charset="EUC-KR">
-<title>out 내장 객체 예제</title>
-</head>
+<title>out 내장 객체 예제</title></head>
 <body>
 <h3>out 내장 객체 : response 출력버퍼에 출력할 수 있는 출력 스트림 객체</h3>
 <h3>1부터 10까지의 합 구하기</h3>

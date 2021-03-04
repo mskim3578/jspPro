@@ -1,7 +1,7 @@
 <%@page import="java.util.Enumeration"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%-- /WebContent/chap03/request1.jsp --%>    
+<%-- /WebContent/request1.jsp --%>    
 <!DOCTYPE html>
 <html>
 <head>

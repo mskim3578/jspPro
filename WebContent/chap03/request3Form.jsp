@@ -12,6 +12,7 @@
 		f.submit();
 	}
 </script>
+<!-- 23*2=46.0 -->
 </head>
 <body>
 <form action="request3.jsp" method="post">

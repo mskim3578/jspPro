@@ -26,5 +26,6 @@
 </head>
 <body>
 application 객체의 test 속성값 :<%= application.getAttribute("test") %>
+<% application.setAttribute("test", null); %>
 </body>
 </html>

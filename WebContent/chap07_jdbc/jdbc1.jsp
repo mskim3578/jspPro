@@ -19,7 +19,7 @@
    Connection conn = DriverManager.getConnection
 		    ("jdbc:oracle:thin:@localhost:1521:xe","kic","1111");
    PreparedStatement pstmt = conn.prepareStatement
-		    ("select * from professor");
+		    ("select * from emp");
    ResultSet rs = pstmt.executeQuery();
    ResultSetMetaData rsmt = rs.getMetaData();
 %><table><tr>

@@ -4,7 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Member;
 
@@ -117,5 +118,75 @@ public class MemberDao {
 		return 0;
 	}
 
+	
+	public List<Member>  list() {
+		Connection conn = DBConnection.getConnection();
+		PreparedStatement pstmt = null;
+		ResultSet rs=null;
+		List<Member> li = new ArrayList<Member>();
+		String sql = "select * from member";
+		try {
+			pstmt = conn.prepareStatement(sql);
+		
+			rs=pstmt.executeQuery();
+			while (rs.next()) {
+				Member m = new Member();
+				m.setId(rs.getString("id"));
+				m.setPass(rs.getString("pass"));
+				m.setName(rs.getString("name"));
+				m.setGender(rs.getInt("gender"));
+				m.setTel(rs.getString("tel"));
+				m.setEmail(rs.getString("email"));
+				m.setPicture(rs.getString("picture"));
+				System.out.println(m);
+				li.add(m);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBConnection.close(conn, pstmt, rs);
+		}
+		return li;	
+		
+	}
+	
+	
+	public int updatePass(String id, String chgpass) {
+		String sql="update member set pass=? where id = ?";
+		Connection conn = DBConnection.getConnection();
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, chgpass);
+			pstmt.setString(2, id);
+			
+			return pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			DBConnection.close(conn, pstmt, null);
+		}
+		return 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	}

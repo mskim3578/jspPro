@@ -14,22 +14,23 @@
    if(login == null || login.trim().equals("")) {%>
 <script>    alert("관리자로 로그인 하세요");   location.href="loginForm.jsp";</script>
 <% } else if (!login.equals("admin"))  { %>
-<script>
+<script> 
     alert("관리자만 가능한 거래 입니다.");    location.href="main.jsp";
 </script>
 <% } else {  //관리자만 조회
 	List<Member> list = new MemberDao().list();%>
 <!DOCTYPE html><html><head><meta charset="EUC-KR"><title>회원 목록 조회</title>
-<link rel="stylesheet" href="/jspStudy1/css/main.css"></head>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/chap07_jdbc/css/main.css"></head>
 <script type="text/javascript">
    function del(id) {
 	    if (confirm(id + "님을 탈퇴하시겠습니까?")) {
 	       location.href="delete.jsp?id="+id;	     	
 	    }   }  </script>
 <body><table>
+
  <caption>MODEL1 회원 목록</caption>
  <tr><th>사진</th><th>아이디</th><th>이름</th><th>성별</th><th>전화</th><th>&nbsp;</th></tr>
- <% for(Member m : list) {%>
+ <% for(Member m : list) {  %>
   <tr><td>
   <img src="img/<%=m.getPicture() %>" width="30" height="32"></td>
   <td><a href="info.jsp?id=<%=m.getId() %>"><%=m.getId() %></a></td><td><%=m.getName() %></td>

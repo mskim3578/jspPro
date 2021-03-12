@@ -36,13 +36,13 @@
 			int result = dao.delete(id);    
 			if(result > 0) {  //삭제 성공
 				if(login.equals("admin")) {  //관리자인 경우
-					msg =id + " 사용자를 강제 탈퇴 성공";	    url = "list.jsp";
+					msg =id + " 사용자를 강제 탈퇴 성공";	    url = "memberList.jsp";
 				} else {  //일반사용자인 경우
 					msg =id + "님의  회원 탈퇴가 완료되었습니다."; url = "loginForm.jsp";  session.invalidate();
 				}
 			} else {  //삭제 실패
 				msg = id +"님의 탈퇴시 오류 발생.";	if(login.equals("admin")) {  //관리자인 경우
-					url = "list.jsp";	} else {  //일반사용자인 경우
+					url = "memberList.jsp";	} else {  //일반사용자인 경우
 					url = "main.jsp";}}
 	   } else {		   msg = id + "님의 비빌번호가 틀립니다.";   url = "deleteForm.jsp?id=" + id;   }   }
 %>

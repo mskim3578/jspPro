@@ -20,7 +20,8 @@ public class DBConnection {
 		}
 		return conn;
 	}
-	static void close (Connection conn, Statement stmt, ResultSet rs){
+	static void close (Connection conn, 
+			Statement stmt, ResultSet rs){
 		try {
 			if(rs != null) rs.close();
 			if(stmt != null) stmt.close();
